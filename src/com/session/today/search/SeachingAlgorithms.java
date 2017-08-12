@@ -1,5 +1,7 @@
 package com.session.today.search;
 
+import com.session.today.Main;
+
 
 
 public class SeachingAlgorithms {
@@ -19,6 +21,8 @@ public class SeachingAlgorithms {
 				indexWithVlue += i + " ";
 				
 			}
+			
+			Main.PrintHorizontalArray(i, -1);
 		}
 		
 		if(!ValueInArray){
@@ -38,7 +42,7 @@ public class SeachingAlgorithms {
 		int low = 0;
 		int high = arraySize - 1;
 		
-		while(low < high){
+		while(low <= high){
 			
 			int middle = (low + high) /2;
 			
@@ -53,6 +57,8 @@ public class SeachingAlgorithms {
 				
 				low = high + 1;
 			}
+			
+			Main.PrintHorizontalArray(middle, -1);
 			
 		}
 		
