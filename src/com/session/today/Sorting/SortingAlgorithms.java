@@ -59,6 +59,11 @@ public class SortingAlgorithms {
 		}
 	}
 	
+	public static void QuickSort(int[] Database) {}
+	
+	public static void MergeSort(int[] Database) {}
+
+	
 	public static void SeletionSort(int[] Database) {
 
 		
