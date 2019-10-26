@@ -1,6 +1,9 @@
 package com.session.today;
 
+import java.util.Comparator;
+
 import com.session.today.Sorting.SortingAlgorithms;
+import com.session.today.search.SeachingAlgorithms;
 
 
 public class Main {
@@ -57,12 +60,35 @@ public class Main {
 	 * Display Array
 	 */
 	protected static void dislayArray() {
-		
+
+		System.out.print("-----------------------------------------------------------");
+		System.out.println();
+
+
 		for (int i = 0; i < ArraySize; i++) {
 			
-			System.out.println( i + " " + array[i]);
+			System.out.print( i + "   | ");
+
 			
 		}
+		System.out.println();
+
+		System.out.print("-----------------------------------------------------------");
+
+		System.out.println();
+		
+	    for (int i = 0; i < ArraySize; i++) {
+			
+			System.out.print(  array[i] +"  | ");
+
+			
+		}
+		System.out.println();
+
+		System.out.print("-----------------------------------------------------------");
+		System.out.println();
+
+
 		
 	}
 	
@@ -118,7 +144,12 @@ public class Main {
 
 		// SortingAlgorithms.SelctionSort(array);
 
-		SortingAlgorithms.InsertionSort(array);
+		//SortingAlgorithms.InsertionSort(array);
+		
+		//Test Merge Sort algorithms by uncommenting the following lines of code
+		dislayArray();
+		SortingAlgorithms.MergeSort(array);
+		dislayArray();
 
 		// SeachingAlgorithms.BinarySearch(array, 17);
 
