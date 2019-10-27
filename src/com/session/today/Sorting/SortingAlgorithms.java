@@ -2,6 +2,7 @@ package com.session.today.Sorting;
 
 
 import com.session.today.Main;
+import com.session.today.helper.Helper;
 
 public class SortingAlgorithms {
 
@@ -15,7 +16,7 @@ public class SortingAlgorithms {
 				
 				if(Database[j] > Database[j+1]){
 					
-					Swap(Database,j,j+1);
+					Helper.Swap(Database,j,j+1);
 					//ArrayPartition.DisplayTheArray(i, j)
 					
 				}
@@ -28,12 +29,7 @@ public class SortingAlgorithms {
 		
 	}
 
-	public static void Swap(int[] database, int j, int i) {
-		int temp = database[j];
-		database[j] = database[i];
-		database[i] = temp;
-		
-	}
+
 
 
 	public static void  InsertionSort(int[] Database) {
@@ -60,7 +56,14 @@ public class SortingAlgorithms {
 		}
 	}
 	
-	public static void QuickSort(int[] Database) {}
+	public static void QuickSort(int[] Database)
+	{
+
+		if(Database.length < 2) {return; }// array is already sorted 
+	
+		Helper.QuickSortStep(Database, 0, Database.length -1);
+		
+	}
 	
 	public static void MergeSort(int[] array )
 	{
@@ -141,7 +144,7 @@ public class SortingAlgorithms {
 				}
 			}
 			
-			Swap(Database, i, min);
+			Helper.Swap(Database, i, min);
 			Main.PrintHorizontalArray(i, -1);
 		}
 	}

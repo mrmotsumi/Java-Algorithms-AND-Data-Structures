@@ -9,7 +9,7 @@ import com.session.today.search.SeachingAlgorithms;
 public class Main {
 
 	
-	protected static int[] array = new int[50];
+	protected static int[] array = new int[10];
 	protected static int ArraySize =10;
 	
 	
@@ -147,9 +147,9 @@ public class Main {
 		//SortingAlgorithms.InsertionSort(array);
 		
 		//Test Merge Sort algorithms by uncommenting the following lines of code
-		dislayArray();
-		SortingAlgorithms.MergeSort(array);
-		dislayArray();
+		//dislayArray();
+		SortingAlgorithms.QuickSort(array);
+		//dislayArray();
 
 		// SeachingAlgorithms.BinarySearch(array, 17);
 
