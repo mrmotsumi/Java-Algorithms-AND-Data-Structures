@@ -15,6 +15,7 @@ public class Helper {
 
 		int rightInd = rightBound - 1;// will scan right until lager than the pivot
 
+
 		while (leftInd <= rightInd) { // scan right until larger than the pivot
 
 			while ((leftInd <= rightInd) && (database[leftInd] <= pivot)) {
@@ -28,9 +29,6 @@ public class Helper {
 			if (leftInd < rightInd) { // both elements were found so swap
 
 				Helper.Swap(database, leftInd, rightInd);
-				// temp = database[rightInd]; database[rightInd] = database[leftInd];
-				// database[leftInd] = temp;
-
 				Main.PrintHorizontalArray(rightInd, database.length - 1); // print the array to show how many steps
 																			// taken to solve the problem
 
@@ -43,6 +41,7 @@ public class Helper {
 
 		QuickSortStep(database, leftBound, leftInd - 1); // left recursive call
 		QuickSortStep(database, leftInd + 1, rightBound); // right recursive call
+		
 
 	}
 
@@ -52,5 +51,7 @@ public class Helper {
 		database[i] = temp;
 
 	}
+
+	
 
 }
