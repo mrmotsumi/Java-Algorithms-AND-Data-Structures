@@ -59,7 +59,9 @@ public class SortingAlgorithms {
 	public static void QuickSort(int[] Database)
 	{
 
-		if(Database.length < 2) {return; }// array is already sorted 
+		if (Database.length < 2) {
+			return;
+		} // array is already sorted
 	
 		Helper.QuickSortStep(Database, 0, Database.length -1);
 		
