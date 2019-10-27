@@ -8,6 +8,16 @@ public class SortingAlgorithms {
 
 	static int arraySize = 10;
 	
+	
+	public static void ShellSort() {}
+	
+	public static void RadixSort() {}
+	
+	public static void  HeapSort() {}
+	
+	public static void  BucketSort() {}
+
+	
 	public static void bubbleSort(int[] Database) {
 		
 		for (int i = arraySize -1; i > 0; i--) {
@@ -28,9 +38,6 @@ public class SortingAlgorithms {
 		}
 		
 	}
-
-
-
 
 	public static void  InsertionSort(int[] Database) {
 		
@@ -89,7 +96,7 @@ public class SortingAlgorithms {
 		for(int i = 1; i< n; i*=2) 
 		{
 			for(int j = 0; j < n; j+=2*i) {
-				merge(arr, out, j, i);
+				Helper.merge(arr, out, j, i);
 
 
 
@@ -101,37 +108,6 @@ public class SortingAlgorithms {
 		
 		System.arraycopy(arr, 0, array, 0, arr.length);
 
-		
-	}
-
-	//merge two arrays
-	private static void merge(int[] arr, int[] out,  int start, int i) {
-		
-		int x = start;
-		int end1 = Math.min(start + i, arr.length);
-		int end2 = Math.min(start + 2*i, arr.length);
-		int y = start + i;
-		int z = start;
-		
-		while((x < end1) && (y < end2)) 
-			
-			if(arr[x] >= arr[y])  {
-
-				out[z++] = arr[x++];
-
-			}
-		
-			
-			else out[z++] = arr[y++];
-			
-		if(x < end1) {
-			System.arraycopy(arr, x, out, z, end1 - x);
-		}
-
-		else if(y < end2) {
-			System.arraycopy(arr, y, out, z, end2 - y);
-
-		}
 		
 	}
 

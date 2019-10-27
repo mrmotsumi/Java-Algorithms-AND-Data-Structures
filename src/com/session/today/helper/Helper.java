@@ -54,4 +54,37 @@ public class Helper {
 
 	
 
+	//merge two arrays
+	public static void merge(int[] arr, int[] out,  int start, int i) {
+		
+		int x = start;
+		int end1 = Math.min(start + i, arr.length);
+		int end2 = Math.min(start + 2*i, arr.length);
+		int y = start + i;
+		int z = start;
+		
+		while((x < end1) && (y < end2)) 
+			
+			if(arr[x] >= arr[y])  {
+
+				out[z++] = arr[x++];
+
+			}
+		
+			
+			else out[z++] = arr[y++];
+			
+		if(x < end1) {
+			System.arraycopy(arr, x, out, z, end1 - x);
+		}
+
+		else if(y < end2) {
+			System.arraycopy(arr, y, out, z, end2 - y);
+
+		}
+		
+	}
+
+	
+
 }
