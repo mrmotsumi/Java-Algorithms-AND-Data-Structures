@@ -1,14 +1,10 @@
 package com.session.algorithms.Sorting;
 
-
 import com.session.algorithms.Main;
 import com.session.algorithms.helper.Helper;
 
 public class SortingAlgorithms {
 
-	static int arraySize = 10;
-	
-	
 
 	/*
 	 * Shellsort, also known as Shell sort or Shell's method, is an in-place
@@ -19,11 +15,9 @@ public class SortingAlgorithms {
 	 */
 	public static void ShellSort(int[] Database) {
 		int in, out, temp;
-
 		int i = 1;
 
 		while (i <= Database.length) {
-
 			i = i * 2 + 1;
 		}
 		while (i > 0) {
@@ -42,12 +36,13 @@ public class SortingAlgorithms {
 		}
 
 	}
-	
-	public static void RadixSort() {}
-	
-	public static void  HeapSort() {}
-	
-	
+
+	public static void RadixSort() {
+	}
+
+	public static void HeapSort() {
+	}
+
 	/*
 	 * In the Bucket Sorting technique, the data items are distributed in a set of
 	 * buckets. Each bucket can hold a similar type of data. After distributing,
@@ -60,137 +55,124 @@ public class SortingAlgorithms {
 	 * 
 	 * Space Complexity: O(nk) for worst case
 	 */
-	public static void  BucketSort(int[] Database, int maxVal) {
-		
-	      int [] bucket=new int[maxVal+1];
-	      
-	      for (int i=0; i<bucket.length; i++) {
-	          bucket[i]=0;
-	       }
-	  
-	       for (int i=0; i<Database.length; i++) {
-	          bucket[Database[i]]++;
-	       }
-	  
-	       int outPos=0;
-	       for (int i=0; i<bucket.length; i++) {
-	          for (int j=0; j<bucket[i]; j++) {
-	        	  Database[outPos++]=i;
-	          }
-	       }
-		
+	public static void BucketSort(int[] Database, int maxVal) {
+
+		int[] bucket = new int[maxVal + 1];
+
+		for (int i = 0; i < bucket.length; i++) {
+			bucket[i] = 0;
+		}
+
+		for (int i = 0; i < Database.length; i++) {
+			bucket[Database[i]]++;
+		}
+
+		int outPos = 0;
+		for (int i = 0; i < bucket.length; i++) {
+			for (int j = 0; j < bucket[i]; j++) {
+				Database[outPos++] = i;
+			}
+		}
+
 	}
 
-	
 	public static void bubbleSort(int[] Database) {
-		
-		for (int i = arraySize -1; i > 0; i--) {
-			
+
+		for (int i = Database.length - 1; i > 0; i--) {
+
 			for (int j = 0; j < i; j++) {
-				
-				if(Database[j] > Database[j+1]){
-					
-					Helper.Swap(Database,j,j+1);
-					//ArrayPartition.DisplayTheArray(i, j)
-					
+
+				if (Database[j] > Database[j + 1]) {
+
+					Helper.Swap(Database, j, j + 1);
+					// ArrayPartition.DisplayTheArray(i, j)
+
 				}
 				Main.PrintHorizontalArray(i, j);
-				
+
 			}
-			
-		//	Main.PrintHorizontalArray(i, -1);
+
 		}
-		
+
 	}
 
-	public static void  InsertionSort(int[] Database) {
-		
-		for (int i = 0; i < arraySize; i++) {
+	public static void InsertionSort(int[] Database) {
+
+		for (int i = 0; i < Database.length; i++) {
 			int j = i;
-			
+
 			int ValueToAdd = Database[i];
-			
-			while((j>0) && (Database[j -1] > ValueToAdd)){
-				
-				Database[j] = Database[j -1];
+
+			while ((j > 0) && (Database[j - 1] > ValueToAdd)) {
+
+				Database[j] = Database[j - 1];
 				j--;
-				
+
 				Main.PrintHorizontalArray(i, j);
-			} 
-			
+			}
+
 			Database[j] = ValueToAdd;
-			
+
 			Main.PrintHorizontalArray(i, j);
-			
-			System.out.println("\nArray[i] =  " + Database[i] + 
-					"\nArray[j] = " + Database[j] + "\nValue to insert = " + ValueToAdd);
+
+			System.out.println("\nArray[i] =  " + Database[i] + "\nArray[j] = " + Database[j] + "\nValue to insert = "
+					+ ValueToAdd);
 		}
 	}
-	
-	public static void QuickSort(int[] Database)
-	{
-		
-		
-		
 
+	public static void QuickSort(int[] Database) {
 
 		if (Database.length < 2) {
 			return;
 		} // array is already sorted
-	
-		Helper.QuickSortStep(Database, 0, Database.length -1);
 
-		
+		Helper.QuickSortStep(Database, 0, Database.length - 1);
+
 	}
-	
-	public static void MergeSort(int[] array )
-	{
-		
+
+	public static void MergeSort(int[] array) {
+
 		int[] arr = new int[array.length];
-		
+
 		System.arraycopy(array, 0, arr, 0, arr.length);
-		
-		int[] out =  new int[arr.length];
-		
+
+		int[] out = new int[arr.length];
+
 		int[] temp; // temp array reference
-		
+
 		int n = arr.length;
-		
-		
-		for(int i = 1; i< n; i*=2) 
-		{
-			for(int j = 0; j < n; j+=2*i) {
+
+		for (int i = 1; i < n; i *= 2) {
+			for (int j = 0; j < n; j += 2 * i) {
 				Helper.merge(arr, out, j, i);
-
-
 
 			}
 
-			temp = arr; arr = out; out = temp;
+			temp = arr;
+			arr = out;
+			out = temp;
 
 		}
-		
+
 		System.arraycopy(arr, 0, array, 0, arr.length);
 
-		
 	}
 
 	public static void SeletionSort(int[] Database) {
 
-		
-		for (int i = 0; i < arraySize; i++) {
-			
+		for (int i = 0; i < Database.length; i++) {
+
 			int min = i;
-			
-			for (int j = i; j < arraySize; j++) {
-				
+
+			for (int j = i; j < Database.length; j++) {
+
 				if (Database[min] > Database[j]) {
-					
+
 					min = j;
-					
+
 				}
 			}
-			
+
 			Helper.Swap(Database, i, min);
 			Main.PrintHorizontalArray(i, -1);
 		}
