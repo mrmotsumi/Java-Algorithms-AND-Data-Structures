@@ -11,44 +11,75 @@ public class SortingAlgorithms {
 	
 
 	/*
-	 * Shellsort, also known as Shell sort or Shell's method, is an in-place comparison sort. 
-	 * It can be seen as either a generalization of sorting by exchange (bubble sort) or 
-	 * sorting by insertion (insertion sort). The method starts by sorting elements far apart
-	 *  from each other and progressively reducing the gap between them.
+	 * Shellsort, also known as Shell sort or Shell's method, is an in-place
+	 * comparison sort. It can be seen as either a generalization of sorting by
+	 * exchange (bubble sort) or sorting by insertion (insertion sort). The method
+	 * starts by sorting elements far apart from each other and progressively
+	 * reducing the gap between them.
 	 */
-	public static void ShellSort(int[] Database)
-	{
+	public static void ShellSort(int[] Database) {
 		int in, out, temp;
-		
+
 		int i = 1;
 
-		while(i <= Database.length) {
-			
+		while (i <= Database.length) {
+
 			i = i * 2 + 1;
 		}
-		while(i > 0) {
-			for(out = i; out < Database.length; out++) 
-			{
+		while (i > 0) {
+			for (out = i; out < Database.length; out++) {
 				temp = Database[out];
 				in = out;
-				
+
 				while (in > i - 1 && Database[in - i] >= temp) {
-			          Database[in] = Database[in - i];
-			          in -= i;
-			        }
+					Database[in] = Database[in - i];
+					in -= i;
+				}
 				Database[in] = temp;
 			}
 			i = (i - 1) / 2;
 
 		}
-	
+
 	}
 	
 	public static void RadixSort() {}
 	
 	public static void  HeapSort() {}
 	
-	public static void  BucketSort() {}
+	
+	/*
+	 * In the Bucket Sorting technique, the data items are distributed in a set of
+	 * buckets. Each bucket can hold a similar type of data. After distributing,
+	 * each bucket is sorted using another sorting algorithm. After that, all
+	 * elements are gathered on the main list to get the sorted form.
+	 * 
+	 * 
+	 * Time Complexity: O(n + k) for best case and average case and O(n^2) for the
+	 * worst case.
+	 * 
+	 * Space Complexity: O(nk) for worst case
+	 */
+	public static void  BucketSort(int[] Database, int maxVal) {
+		
+	      int [] bucket=new int[maxVal+1];
+	      
+	      for (int i=0; i<bucket.length; i++) {
+	          bucket[i]=0;
+	       }
+	  
+	       for (int i=0; i<Database.length; i++) {
+	          bucket[Database[i]]++;
+	       }
+	  
+	       int outPos=0;
+	       for (int i=0; i<bucket.length; i++) {
+	          for (int j=0; j<bucket[i]; j++) {
+	        	  Database[outPos++]=i;
+	          }
+	       }
+		
+	}
 
 	
 	public static void bubbleSort(int[] Database) {
