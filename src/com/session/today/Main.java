@@ -148,10 +148,13 @@ public class Main {
 		
 		//Test Merge Sort algorithms by uncommenting the following lines of code
 		//dislayArray();
-		SortingAlgorithms.QuickSort(array);
+		//SortingAlgorithms.QuickSort(array);
 		//dislayArray();
 
 		// SeachingAlgorithms.BinarySearch(array, 17);
+		dislayArray();
+		SortingAlgorithms.ShellSort(array);
+		dislayArray();
 
 	}
 

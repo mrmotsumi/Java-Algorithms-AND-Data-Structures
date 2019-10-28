@@ -9,7 +9,40 @@ public class SortingAlgorithms {
 	static int arraySize = 10;
 	
 	
-	public static void ShellSort() {}
+
+	/*
+	 * Shellsort, also known as Shell sort or Shell's method, is an in-place comparison sort. 
+	 * It can be seen as either a generalization of sorting by exchange (bubble sort) or 
+	 * sorting by insertion (insertion sort). The method starts by sorting elements far apart
+	 *  from each other and progressively reducing the gap between them.
+	 */
+	public static void ShellSort(int[] Database)
+	{
+		int in, out, temp;
+		
+		int i = 1;
+
+		while(i <= Database.length) {
+			
+			i = i * 2 + 1;
+		}
+		while(i > 0) {
+			for(out = i; out < Database.length; out++) 
+			{
+				temp = Database[out];
+				in = out;
+				
+				while (in > i - 1 && Database[in - i] >= temp) {
+			          Database[in] = Database[in - i];
+			          in -= i;
+			        }
+				Database[in] = temp;
+			}
+			i = (i - 1) / 2;
+
+		}
+	
+	}
 	
 	public static void RadixSort() {}
 	
