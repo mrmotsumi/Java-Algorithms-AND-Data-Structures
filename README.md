@@ -8,3 +8,12 @@ Radix Sort, Heap Sort, Bucket Sort) &amp; Data Structure
 
     * Binary Search 
     * Linear Search 
+    
+--> Implemented Sort Algorithms 
+   
+     * Bubble Sort
+     * Quick Sort
+     * Selection Sort
+     * Insertion Sort
+     * Bucket Sort
+     * Merge Sort
