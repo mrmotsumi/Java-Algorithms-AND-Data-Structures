@@ -1,10 +1,8 @@
-package com.session.today;
+package com.session.algorithms;
 
-import java.util.Comparator;
 
-import com.session.today.Sorting.SortingAlgorithms;
-import com.session.today.helper.Helper;
-import com.session.today.search.SeachingAlgorithms;
+import com.session.algorithms.Sorting.SortingAlgorithms;
+import com.session.algorithms.helper.Helper;
 
 
 public class Main {

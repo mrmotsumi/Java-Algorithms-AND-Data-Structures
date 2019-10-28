@@ -1,8 +1,8 @@
-package com.session.today.helper;
+package com.session.algorithms.helper;
 
 import java.util.Arrays;
 
-import com.session.today.Main;
+import com.session.algorithms.Main;
 
 public class Helper {
 

@@ -1,8 +1,8 @@
-package com.session.today.Sorting;
+package com.session.algorithms.Sorting;
 
 
-import com.session.today.Main;
-import com.session.today.helper.Helper;
+import com.session.algorithms.Main;
+import com.session.algorithms.helper.Helper;
 
 public class SortingAlgorithms {
 

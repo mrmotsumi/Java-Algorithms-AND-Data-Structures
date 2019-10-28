@@ -1,6 +1,6 @@
-package com.session.today.search;
+package com.session.algorithms.search;
 
-import com.session.today.Main;
+import com.session.algorithms.Main;
 
 
 
