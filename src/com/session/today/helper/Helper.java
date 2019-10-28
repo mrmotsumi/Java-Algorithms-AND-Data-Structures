@@ -1,5 +1,7 @@
 package com.session.today.helper;
 
+import java.util.Arrays;
+
 import com.session.today.Main;
 
 public class Helper {
@@ -53,6 +55,14 @@ public class Helper {
 	}
 
 	
+	//get maximum value in the array
+	
+	public static int getMax(int[] array) 
+	{
+	 int max = Arrays.stream(array).max().getAsInt();
+	 
+	 return max;
+	}
 
 	//merge two arrays
 	public static void merge(int[] arr, int[] out,  int start, int i) {

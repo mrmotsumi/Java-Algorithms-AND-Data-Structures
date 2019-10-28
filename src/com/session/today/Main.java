@@ -3,6 +3,7 @@ package com.session.today;
 import java.util.Comparator;
 
 import com.session.today.Sorting.SortingAlgorithms;
+import com.session.today.helper.Helper;
 import com.session.today.search.SeachingAlgorithms;
 
 
@@ -153,8 +154,9 @@ public class Main {
 
 		// SeachingAlgorithms.BinarySearch(array, 17);
 		dislayArray();
-		SortingAlgorithms.ShellSort(array);
+	 	SortingAlgorithms.BucketSort(array, Helper.getMax(array));;
 		dislayArray();
+		
 
 	}
 
