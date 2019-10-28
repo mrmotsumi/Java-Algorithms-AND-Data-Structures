@@ -7,5 +7,4 @@ Radix Sort, Heap Sort, Bucket Sort) &amp; Data Structure
 --> Implemented Seacrh Algorithms are: 
 
     * Binary Search 
-		
-		* Linear Search 
+    * Linear Search 
