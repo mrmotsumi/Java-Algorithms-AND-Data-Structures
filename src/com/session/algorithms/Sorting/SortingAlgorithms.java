@@ -130,6 +130,47 @@ public class SortingAlgorithms {
 
 	}
 
+	
+	
+	public static void Radixsort(int[] Database) {
+	  
+		int bucket[][]=new int[10][10];  
+        int bucket_count[]=new int[10];  
+        int i, j, k, remainder, NOP=0, divisor=1, larger, pass;  
+        larger = Helper.getMax(Database);  
+        while(larger>0)  
+        {  
+            NOP++;  
+            larger/=10;  
+        }  
+        for(pass=0;pass<NOP;pass++) // Initialize the buckets  
+        {  
+            for(i=0;i<10;i++)  
+            bucket_count[i]=0;  
+            for(i=0;i<10;i++)  
+            {  
+                // sort the numbers according to the digit at passth place            
+                remainder = (Database[i]/divisor)%10;  
+                bucket[remainder][bucket_count[remainder]] = Database[i];  
+                bucket_count[remainder] += 1;  
+            }  
+            // collect the numbers after PASS pass  
+            i=0;  
+            for(k=0;k<10;k++)  
+            {  
+                for(j=0;j<bucket_count[k];j++)  
+                {  
+                	Database[i] = bucket[k][j];  
+                    i++;  
+                }  
+            }  
+            divisor *= 10;  
+        }  
+	}
+	
+	
+	
+
 	public static void MergeSort(int[] array) {
 
 		int[] arr = new int[array.length];

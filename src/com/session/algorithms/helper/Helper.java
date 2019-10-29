@@ -95,6 +95,13 @@ public class Helper {
 		
 	}
 
+	public static int calculateNumberOfDigitsIn(int maxNum) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+
 	
 
 }
