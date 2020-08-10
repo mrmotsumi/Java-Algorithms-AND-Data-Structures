@@ -1,5 +1,5 @@
 # can buy me a six pack via link below
-<a href="paypal.me/MOREKOLODI"> paypal</a>)
+<a href="paypal.me/MOREKOLODI"> paypal</a>
 
 # Java-Algorithms-AND-Data-Structures
 Algorithms  (Linear Search, Binary Search, Bubble Sort, Selection Sort, Merge Sort, Insertion Sort, Quick Sort, Shell Sort,
